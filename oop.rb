@@ -11,7 +11,7 @@ class Unicorn
     end
 
     def say 
-        puts "*~* AYO, take me out to dinner *~*"
+        puts "*~* AYO, #{name} take me out to dinner *~*"
     end
 
 end 
@@ -28,7 +28,23 @@ unicorn1.say
 
 class Vampire
     attr_reader :name, :pet, :thirsty
-    def initialize(name, pet = "bat", )
+    def initialize(name, pet = "bat", thirsty = true)
+        @name = name
+        @pet = pet
+        @thirsty = true
+    end
+
+    def drink
+        @thirsty = false
+    end
+
+end
+
+vampire1 = Vampire.new("Dracula")
+p vampire1
+vampire1.drink
+p vampire1
+
 
 
 
@@ -38,6 +54,27 @@ class Vampire
 #  it should have a dynamic color attribute (string)
 #  it should have a is_hungry attribute that is true by default
 #  it should have a eat method. If the dragon eats 4 times, it is no longer hungry
+
+class Dragon
+    attr_reader :name, :rider, :color, :is_hungry
+    def initialize(name, rider, color, is_hungry = true)
+        @name = "name"
+        @rider = "rider"
+        @color = "color"
+        @is_hungry = true
+    end
+
+    def eat (quantity)
+        @is_hungry = true
+        if quantity >= 4
+            is_hungry = false
+        end
+    end
+end
+
+dragon1 = Dragon.new()
+
+
 
 
 #  Write a Hobbit class
